@@ -5,8 +5,8 @@ const links = [
   }
 ]
 // const linkHtml = "Hello";
-forEach((links, i) => {
-
-});
+// forEach((links, i) => {
+//
+// });
 let linkHtml = document.querySelector(".linkHtml");
 linkHtml.textContent = "Hello World";

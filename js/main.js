@@ -8,4 +8,5 @@ const linkHtml = "Hello";
 forEach((links, i) => {
 
 });
-document.getElementById('linkHtml').innerHTML = linkHtml
+let linkHtml = document.querySelector(".linkHtml");
+linkHtml.textContent = "Hello World";

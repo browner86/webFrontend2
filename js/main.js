@@ -4,7 +4,7 @@ const links = [
     url: "week1/index.html"
   }
 ]
-const linkHtml = "Hello";
+// const linkHtml = "Hello";
 forEach((links, i) => {
 
 });

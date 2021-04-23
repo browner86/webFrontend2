@@ -8,5 +8,8 @@ const links = [
 // forEach((links, i) => {
 //
 // });
-let linkHtml = document.querySelector(".linkHtml");
-linkHtml.textContent = "Hello World";
+// let linkHtml = document.querySelector(".linkHtml");
+// linkHtml.textContent = 'Hello World';
+var x = document.getElementById("myDIV");
+x.querySelector(".links").innerHTML = "Hello World!";
+x.querySelector("#paragraph").innerHTML = "This is a paragraph";

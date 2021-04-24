@@ -1,6 +1,10 @@
 body {
   font-size: 20px;
   font-family: arial, helvetica, sans-serif;
+  margin: 0;
+}
+.main{
+  padding-left: 25px;
 }
 h1 {
   background-color: gray;
@@ -8,6 +12,7 @@ h1 {
 }
 .linkImage {
   max-width: 100px;
+  padding: 15px;
 }
 
 .exerciseList{
@@ -18,4 +23,17 @@ h1 {
 
 .screenshot{
   max-width: 250px;
+  /* padding: px; */
+  /* border-style: solid; */
+  /* border-color: gray;
+  border-width: medium; */
+
+
 }
+.screenshot:hover{
+  transform: scale(1.1);
+
+}
+ .linkImage:hover {
+   transform: scale(1.2);
+ }

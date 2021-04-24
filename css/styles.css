@@ -6,3 +6,16 @@ h1 {
   background-color: gray;
   padding: 1em;
 }
+.linkImage {
+  max-width: 100px;
+}
+
+.exerciseList{
+
+  display: flex;
+  flex-direction: column;
+}
+
+.screenshot{
+  max-width: 250px;
+}

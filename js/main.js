@@ -7,7 +7,7 @@ create a new link to that weeks project.
 //key value pairs with label and url
 const links = [
   { label: "Week1 notes",
-    url: "week1/index.html"
+    url: "/week1/index.html"
   }];
 
 // declare variable and begin ordered list

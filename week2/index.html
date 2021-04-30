@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Week1</title>
+  </head>
+  <body>
+    <h1>Week 2</h1>
+    <div class="main">
+
+
+    <h2>Notes</h2>
+    <ul>
+      <li>
+        <h3>Arrow Functions</h3>
+        <p>ES6 introduced a new syntax for declaring functions called thearrowsyntax.
+          These make declaring functions much more succinct by using less verbose syntax.
+          Arrow functions can be identified by the 'arrow' symbol, => that gives them their
+          name. The parameters come before the arrow and the main body of the function
+          comes after. Arrow functions are always anonymous, so if you want to refer to
+          them, you must assign them to a variable. For example, the square function
+          we wrote earlier can be written like so:</p>
+          <code>const square = x => x*x;</code>
+          <p>Arrow functions have a number of advantages over other ways of declaring functions:
+
+They are much less verbose than normal function declarations.
+Single parameters don't need putting into parentheses.
+The body of the function doesn't need placing inside a block if it's
+ only one line.
+The return keyword isn't required if the return statement is the only
+ statement in the body of the function.
+They don't bind their own value of this to the function
+ (we'll see why this is a particularly useful property when we cover
+ objects later in the book).
+In the square example above parameter, x didn't need to go in
+parentheses because it's the only parameter. Multiple parameters
+need to go inside parentheses, for example, the following function
+adds two numbers together:</p>
+<code>const add = (x,y) => x + y;</code>
+<p>Arrow functions make perfect candidates for short, anonymous functions,
+  and you will often see them used later in the book.</p>
+
+
+      </li>
+      <li>
+        <h3>Map()</h3>
+        <p>he map() method is very similar to the forEach() method.
+          It also iterates over an array, and takes a callback function
+          as a parameter that is invoked on each item in the array.
+          This is often used to process data returned from databases
+          in array form, such as adding HTML tags to plain text.
+          The difference is that it returns a new array that replaces
+          each value with the return value of the callback function.
+          For example, we can square every number in an array using
+          the square function we wrote previously as a callback to
+          the map() method:</p>
+          <code>[1,2,3].map( x => 2 * x);
+<< [2,4,6]</code>
+
+      </li>
+      <li>
+        <h3>Reduce()</h3>
+        <p>The reduce() method is another method that iterates over each
+        value in the array, but this time it cumulatively combines each
+        result to return just a single value. The callback function is
+        used to describe how to combine each value of the array with
+        the running total. This is often used to calculate statistics
+        such as averages from data stored in an array. It usually
+        takes two parameters. The first parameter represents the accumulated
+        value of all the calculations so far, and the second parameter
+        represents the current value in the array. The following example
+        shows how to sum an array of numbers:</p>
+        <code>[1,2,3,4,5].reduce( (acc,val) => prev + val );
+<< 15</code>
+      </li>
+      <li>
+        <h3>filter()</h3>
+        <p>The filter() method returns a new array that only contains items
+          from the original array that return true when passed to the callback.
+          For example, we can filter an array of numbers to just the even numbers
+          using the following code:</p>
+          <code>const numbers = [ 2, 7, 6, 5, 11, 23, 12 ]
+numbers.filter(x => x%2 === 0 ); // this returns true if the number is even
+<< [ 2, 6, 12 ]</code>
+      </li>
+
+
+
+    </ul>
+    <h2>Links to exercises.</h2>
+    <p>Click on github icon to see code.</p>
+    <div class="exercises">
+
+
+
+      <div id="Quiz">
+        <!-- <a href="quiz/index.html">Quiz</a>
+        <a href="rainbow/rainbow.html"><img class="screenshot" id="rainbow" src="../images/quizNinja.png" alt="Rainbow Exercise"></a> -->
+
+        <a href="quiz/index.html"><img class = "screenshot" src="../images/quiz2.png" alt="rainbow screenshot"></a>
+        <a href="https://github.com/browner86/webFrontend2/tree/main/week2/quiz2"><img class ="linkImage" src="../images/githubLink.jpeg" alt="see code on github"></a>
+      </div>
+
+      </div>
+
+
+
+
+
+
+      </div>
+
+
+
+  </body>
+</html>

@@ -1,0 +1,188 @@
+/* Mobile First Design */
+
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+:root {
+	--cell-size: 80px;
+	--mark-size: calc(var(--cell-size) * 0.9);
+	--background-color: rgb(22, 9, 44);
+	--gamePiece-color: rgba(50, 19, 100);
+	--gamePiece-color-light: rgba(50, 19, 100, 0.5);
+	--border: 1px solid black;
+}
+body {
+	margin: 0;
+	padding: 0;
+}
+h1 {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 30px auto 15px auto;
+	font-size: 18px;
+}
+
+/* center and style the reset button */
+#reset {
+	display: block;
+	padding: 7px;
+	font-size: 18px;
+	border-radius: 7%;
+	background-color: var(--background-color);
+	color: white;
+	transition: 0.2s ease-in;
+	margin: auto;
+}
+#reset:hover {
+	box-shadow: 5px 5px 5px black;
+	transform: scale(1.1);
+}
+/* center the game board to the viewport */
+.board {
+	width: 100vw;
+	height: 80vh;
+	display: grid;
+	grid-template-columns: repeat(3, auto);
+	justify-content: center;
+	align-content: center;
+	justify-items: center;
+}
+/* set cell size and remove outer boarders to create board  */
+.cell {
+	width: var(--cell-size);
+	height: var(--cell-size);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	cursor: pointer;
+}
+
+.cell:nth-child(3n + 2) {
+	border-left: var(--border);
+	border-right: var(--border);
+}
+
+.cell:nth-child(4),
+.cell:nth-child(5),
+.cell:nth-child(6) {
+	border-top: var(--border);
+	border-bottom: var(--border);
+}
+
+/* If a cell has a character change cursor to not allowed */
+.cell.x,
+.cell.circle {
+	cursor: not-allowed;
+}
+/* set the character color once the cell has been selected */
+.cell.x::before,
+.cell.x::after,
+.cell.circle::before {
+	background-color: var(--gamePiece-color);
+}
+/* set the character color when player hovers over cell */
+.board.x .cell:not(.x):not(.circle):hover::before,
+.board.x .cell:not(.x):not(.circle):hover::after,
+.board.circle .cell:not(.x):not(.circle):hover::before {
+	background-color: var(--gamePiece-color-light);
+}
+
+/* if cell is empty on hover cell shows x */
+.cell.x::before,
+.cell.x::after,
+.board.x .cell:not(.x):not(.circle):hover::before,
+.board.x .cell:not(.x):not(.circle):hover::after {
+	content: '';
+	position: absolute;
+	width: calc(var(--mark-size) * 0.1);
+	height: var(--mark-size);
+}
+.cell.x::before,
+.board.x .cell:not(.x):not(.circle):hover::before {
+	transform: rotate(45deg);
+}
+.cell.x::after,
+.board.x .cell:not(.x):not(.circle):hover::after {
+	transform: rotate(-45deg);
+}
+/* if cell is empty on hover cell shows o */
+.cell.circle::before,
+.cell.circle::after,
+.board.circle .cell:not(.x):not(.circle):hover::before,
+.board.circle .cell:not(.x):not(.circle):hover::after {
+	content: '';
+	position: absolute;
+	border-radius: 50%;
+}
+.cell.circle::before,
+.board.circle .cell:not(.x):not(.circle):hover::before {
+	width: var(--mark-size);
+	height: var(--mark-size);
+}
+.cell.circle::after,
+.board.circle .cell:not(.x):not(.circle):hover::after {
+	width: calc(var(--mark-size) * 0.7);
+	height: calc(var(--mark-size) * 0.7);
+	background-color: white;
+}
+
+.winning-message {
+	/* message shows only if there is a win or draw */
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 40;
+	background-color: var(--background-color);
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	font-size: 5rem;
+}
+
+
+.winning-message button {
+	font-size: 2rem;
+	background-color: white;
+	border: 1px double var(--background-color);
+	padding: 10px;
+	cursor: pointer;
+}
+.winning-message button:hover {
+	background-color: darkgray;
+	color: white;
+}
+.winning-message.show {
+	display: flex;
+}
+@media screen and (min-width: 460px) {
+	h1 {
+		font-size: 24px;
+	}
+	:root {
+		--cell-size: 100px;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	h1 {
+		font-size: 30px;
+	}
+	:root {
+		--cell-size: 120px;
+	}
+}
+@media screen and (min-width: 768px) {
+	h1 {
+		font-size: 40px;
+	}
+	.board {
+		margin-top: -30px;
+		height: 94vh;
+	}
+}

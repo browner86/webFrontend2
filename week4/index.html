@@ -12,7 +12,20 @@
 
     <h2>Notes</h2>
     <ul>
-      <li><p>note 1.</p></li>
+      <li>
+        <h3>Submitting a Form</h3>
+        <p>Possibly the most important form event is the submit event,
+        occurring when the form is submitted. Usually this will send the content
+        of the form to the server to be processed, but we can use JavaScript to
+        intercept the form before it’s sent by adding a submit event listener.
+        Add the following code to the main.js file:</p>
+        <code>const form = document.forms['search'];
+          form.addEventListener ('submit', search, false);
+          function search() {
+            alert(' Form Submitted');
+        }</code>
+      </li>
+
       <li><p>note 2</p></li>
       <li><p>note 3</p></li>
     </ul>
@@ -23,7 +36,7 @@
 
       <div >
         <!-- <a href="rainbow/rainbow.html">Rainbow</a> -->
-        <a href="rainbow/rainbow.html"><img class="screenshot" id="rainbow" src="../images/rainbow.png" alt="Rainbow Exercise"></a>
+        <a href="../project/googleMapsClone/index.html"><img class="screenshot" id="rainbow" src="../images/googleMapsClone.png" alt="Mapbox tutorial"></a>
         <!-- <label for="rainbow">Rainbow</label> -->
         <a href="https://github.com/browner86/webFrontend2/tree/main/week1/rainbow"><img class ="linkImage"src="../images/githubLink.jpeg" alt="see code on github"></a>
       </div>

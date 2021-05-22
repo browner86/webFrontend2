@@ -12,9 +12,79 @@
 
     <h2>Notes</h2>
     <ul>
-      <li><p>note 1.</p></li>
-      <li><p>note 2</p></li>
-      <li><p>note 3</p></li>
+      <li>
+        <h3>Feature Detection</h3>
+        <p>The recommended way to determine browser support for a feature is to
+          use feature detection. This is done using an if statement to check
+          whether an object or method exists before trying to actually call the
+          method. For example, say we want to use the shiny new holoDeck API
+          (as far as I know, this doesn't actually exist ... yet), we would wrap
+          any method calls inside the following if block:</p>
+          <code>if (window.holoDeck) {
+            virtualReality.activate();
+            }
+          </code>
+      </li>
+      <li>
+        <h3>Alert</h3>
+        <p>The most basic form of debugging is to use the alert() method to show
+          a dialog at certain points in the code. Because alert() stops a program
+          from running until OK is clicked, it allows us to effectively put
+          breakpoints in the code that let us check the value of variables at
+          that point to see if they’re what we expect them to be. Take the
+          following example that checks to see if a person’s age is appropriate:</p>
+        </li>
+      <li>
+        <h3>Console</h3>
+        <p>We've already seen and used the console.log() method. This can be
+        used to log the value of variables at different stages of the program,
+        although it will not actually stop the execution of the program in the
+        same way as alert() does. For example, we could add some console.log()
+        statements in the amIOldEnough() function, to log the position in the
+        function as well as the value of the age variable:</p></li>
+
+      <li>
+        <h3>debugger</h3>
+        <p>One of the most useful commands is the debugger keyword. This will
+          create a breakpoint in your code that will pause the execution of the
+          code and allow you to see where the program is currently up to. You
+          can also hover over any variables to see what value they hold at that
+          point. The program can then be restarted by clicking on the 'play'
+          button.</p>
+          <code>
+            function amIOldEnough(age){
+                  debugger;
+                      if (age < 12) {
+                      debugger;
+                      return 'No, sorry.';
+                      } else if (age < 18) {
+                      debugger;
+                      return 'Only if you are accompanied by an adult.';
+                      } else {
+                      debugger;
+                      return 'Yep, come on in!';
+                  }
+              }
+              amIOldEnough(16);
+          </code>
+          <p>Remember to remove any references to the debugger command before
+            shipping any code, otherwise the program will appear to freeze when
+            people try to use it!</p>
+      </li>
+      <li>
+        <h3>Throw</h3>
+        <p>So far we’ve seen errors that are thrown automatically by the JavaScript
+        engine when an error occurs. It’s also possible to throw your own
+        exceptions using the throw statement. This will allow for any problems
+        in your code to be highlighted and dealt with, rather than lurk quietly
+        in the background.
+
+        The throw statement can be applied to any JavaScript expression, causing
+        the execution of the program to stop. For example, all the following
+        lines of code will cause a program to halt:</p>
+        <code>throw new Error('Something has gone badly wrong!');</code>
+
+      </li>
     </ul>
     <h2>Links to exercises.</h2>
     <p>Click on github icon to see code.</p>
@@ -23,9 +93,9 @@
 
       <div >
         <!-- <a href="rainbow/rainbow.html">Rainbow</a> -->
-        <a href="rainbow/rainbow.html"><img class="screenshot" id="rainbow" src="../images/rainbow.png" alt="Rainbow Exercise"></a>
+        <a href="toDoW3Tutorial/index.html"><img class="screenshot" id="toDo" src="../images/toDoListTutorial.png" alt="Rainbow Exercise"></a>
         <!-- <label for="rainbow">Rainbow</label> -->
-        <a href="https://github.com/browner86/webFrontend2/tree/main/week1/rainbow"><img class ="linkImage"src="../images/githubLink.jpeg" alt="see code on github"></a>
+        <a href="https://github.com/browner86/webFrontend2/tree/main/week5/toDoW3Tutorial"><img class ="linkImage"src="../images/githubLink.jpeg" alt="see code on github"></a>
       </div>
       <div >
         <!-- <a href="quiz/index.html">Quiz</a>

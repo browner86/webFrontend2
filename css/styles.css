@@ -37,3 +37,11 @@ h1 {
  .linkImage:hover {
    transform: scale(1.2);
  }
+
+ code {
+   display: block;
+   white-space: pre-wrap;
+   font-size: small;
+   background-color: #d1cec7;
+
+ }

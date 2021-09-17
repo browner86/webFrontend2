@@ -47,5 +47,5 @@ h1 {
  }
 .exercises {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }

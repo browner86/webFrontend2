@@ -51,8 +51,14 @@ h1 {
   flex-wrap: wrap;
 }
 
+.ind-exercise{
+  display: flex;
+  flex-direction: column;
+}
+
 .screenshot {
   margin: 15px;
+  max-height: 200;
   -webkit-box-shadow: 8px 8px 6px -6px #222;
   -moz-box-shadow: 8px 8px 6px -6px #222;
   box-shadow: 8px 8px 6px -6px #222;

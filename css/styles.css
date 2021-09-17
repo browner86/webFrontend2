@@ -45,3 +45,7 @@ h1 {
    background-color: #d1cec7;
 
  }
+.exercises {
+  display: flex;
+  flex-direction: column;
+}

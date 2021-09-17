@@ -52,6 +52,7 @@ h1 {
 }
 
 .ind-exercise {
+  padding: 15px;
   -webkit-box-shadow: 4px 4px 6px -6px #222;
   -moz-box-shadow: 4px 4px 6px -6px #222;
   box-shadow: 4px 4px 6px -6px #222;

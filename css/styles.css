@@ -53,8 +53,8 @@ h1 {
 
 .ind-exercise {
   margin: 15px;
-  -webkit-box-shadow: 4px 4px 6px -6px #222;
-  -moz-box-shadow: 4px 4px 6px -6px #222;
-  box-shadow: 4px 4px 6px -6px #222;
+  -webkit-box-shadow: 8px 8px 6px -6px #222;
+  -moz-box-shadow: 8px 8px 6px -6px #222;
+  box-shadow: 8px 8px 6px -6px #222;
 
 }

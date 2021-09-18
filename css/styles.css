@@ -58,7 +58,7 @@ h1 {
 
 .screenshot {
   margin: 15px;
-  max-height: 200;
+  /* max-height: 150px; */
   -webkit-box-shadow: 8px 8px 6px -6px #222;
   -moz-box-shadow: 8px 8px 6px -6px #222;
   box-shadow: 8px 8px 6px -6px #222;

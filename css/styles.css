@@ -64,3 +64,9 @@ h1 {
   box-shadow: 8px 8px 6px -6px #222;
 
 }
+.ind-exercise p{
+  font-size: small ;
+}
+#endnote{
+  font-size: small;
+}

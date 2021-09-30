@@ -39,6 +39,24 @@
         user time to perform another action with the device. The click event
         can be thought of as a "tap" in the context of a touch event.</p>
       </li>
+      <li>
+        <h3>ES6 Class Declarations</h3>
+        <p>Before ES6, constructor functions were the only way of achieving class-like behavior in JavaScript.</p>
+          <br><br>
+          <p>ES6 introduced the newclass declarationsyntax that does exactly the same thing as a constructor function, 
+          but looks much similar to writing a class in a class-based programming language. Here is the dice example 
+          again, using a class declaration:</p>
+          <code>
+            class Dice {
+              constructor(sides=6) {
+                  this.sides = sides;
+              }
+              roll() {
+                  return Math.floor(this.sides * Math.random() + 1)
+              }
+          }
+          </code>
+      </li>
     </ul>
     <h2>Links to exercises.</h2>
     <p>Click on github icon to see code.</p>

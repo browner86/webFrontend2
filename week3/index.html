@@ -42,7 +42,7 @@
       <li>
         <h3>ES6 Class Declarations</h3>
         <p>Before ES6, constructor functions were the only way of achieving class-like behavior in JavaScript.</p>
-          <br><br>
+          <br>
           <p>ES6 introduced the newclass declarationsyntax that does exactly the same thing as a constructor function, 
           but looks much similar to writing a class in a class-based programming language. Here is the dice example 
           again, using a class declaration:</p>
@@ -53,6 +53,38 @@
               }
               roll() {
                   return Math.floor(this.sides * Math.random() + 1)
+              }
+          }
+          </code>
+          
+      </li>
+      <h3>Modular JavaScript</h3>
+      <p>A module is a self-contained piece of code that provides functions and methods that can then be used in 
+        other files and by other modules. This helps to keep code organized in separate, reusable files, which 
+        improves code maintainability. The code in a module should have a single purpose, and group together 
+        functions with distinct functionality. For example, you might keep any functions used for Ajax in their 
+        own module. This could then be used in any projects where Ajax was required. </p>
+      <li>
+        <h3>Constructor Functions</h3>
+        <p>By convention, the names of constructor functions or class declarations are capitalized, which is the 
+          convention used for classes in class-based programming languages.</p>
+
+      </li>
+      <li>
+        <h3>Static Methods</h3>
+        <p>The static keyword can be used in class declarations to create a static method. These are sometimes called 
+          class methods in other programming languages. A static method is called by the class directly rather than 
+          by instances of the class.</p>
+          <code>
+            class Dice {
+              constructor(sides=6) {
+                  this.sides = sides;
+              }
+              roll() {
+                  return Math.floor(this.sides * Math.random() + 1)
+              }
+              static description() {
+                  return 'A way of choosing random numbers'
               }
           }
           </code>

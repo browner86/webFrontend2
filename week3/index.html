@@ -1,52 +1,61 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="../css/styles.css">
-    <title>Week3</title>
-  </head>
-  <body>
-    <h1>Week 3</h1>
-    <div class="main">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="../css/styles.css">
+  <title>Week3</title>
+</head>
+
+<body>
+  <h1>Week 3</h1>
+  <div class="main">
 
 
     <h2>Notes</h2>
     <ul>
-      <li><p>The parse() method takes a string of data in JSON format and
-        returns a JavaScript object:</p></li>
-      <li><p>The stringify() method does the opposite, taking a JavaScript
-        object and returning a string of JSON data, as can be seen in the
-        example:</p></li>
-      <li><p>There are no 'swipe' events. These need to be created by
-        using a combination of touchstart , touchmove , and touchleave events
-        that monitor the distance and direction moved from start to finish of a
-        touch event.
+      <li>
+        <p>The parse() method takes a string of data in JSON format and
+          returns a JavaScript object:</p>
+      </li>
+      <li>
+        <p>The stringify() method does the opposite, taking a JavaScript
+          object and returning a string of JSON data, as can be seen in the
+          example:</p>
+      </li>
+      <li>
+        <p>There are no 'swipe' events. These need to be created by
+          using a combination of touchstart , touchmove , and touchleave events
+          that monitor the distance and direction moved from start to finish of a
+          touch event.
 
-        There were proposals for gesture eventsthat may be supported in the
-        future, but it seems they are not scheduled to be part of the
-        specification anytime soon.
+          There were proposals for gesture eventsthat may be supported in the
+          future, but it seems they are not scheduled to be part of the
+          specification anytime soon.
 
-        If you need to implement gestures, it's probably a good idea to use a
-        library such asHammer.JSorzingtouchthat makes events such as swipe,
-        pinch and rotate easy to implement.</p></li>
-      <li><p>Be careful when using the touchstart event as it fires as soon as
-        a user touches the screen. They may be touching the screen because they
-        want to zoom in or swipe, and a touchstart event listener could prevent
-        them from doing this.
+          If you need to implement gestures, it's probably a good idea to use a
+          library such asHammer.JSorzingtouchthat makes events such as swipe,
+          pinch and rotate easy to implement.</p>
+      </li>
+      <li>
+        <p>Be careful when using the touchstart event as it fires as soon as
+          a user touches the screen. They may be touching the screen because they
+          want to zoom in or swipe, and a touchstart event listener could prevent
+          them from doing this.
 
-        The click event is often a much safer option as it still fires when the
-        screen is touched, but there’s a slight delay of 300ms, allowing the
-        user time to perform another action with the device. The click event
-        can be thought of as a "tap" in the context of a touch event.</p>
+          The click event is often a much safer option as it still fires when the
+          screen is touched, but there’s a slight delay of 300ms, allowing the
+          user time to perform another action with the device. The click event
+          can be thought of as a "tap" in the context of a touch event.</p>
       </li>
       <li>
         <h3>ES6 Class Declarations</h3>
         <p>Before ES6, constructor functions were the only way of achieving class-like behavior in JavaScript.</p>
-          <br>
-          <p>ES6 introduced the newclass declarationsyntax that does exactly the same thing as a constructor function, 
-          but looks much similar to writing a class in a class-based programming language. Here is the dice example 
+        <br>
+        <p>ES6 introduced the newclass declarationsyntax that does exactly the same thing as a constructor function,
+          but looks much similar to writing a class in a class-based programming language. Here is the dice example
           again, using a class declaration:</p>
-          <code>
+        <code>
             class Dice {
               constructor(sides=6) {
                   this.sides = sides;
@@ -56,26 +65,26 @@
               }
           }
           </code>
-          
+
       </li>
       <h3>Modular JavaScript</h3>
-      <p>A module is a self-contained piece of code that provides functions and methods that can then be used in 
-        other files and by other modules. This helps to keep code organized in separate, reusable files, which 
-        improves code maintainability. The code in a module should have a single purpose, and group together 
-        functions with distinct functionality. For example, you might keep any functions used for Ajax in their 
+      <p>A module is a self-contained piece of code that provides functions and methods that can then be used in
+        other files and by other modules. This helps to keep code organized in separate, reusable files, which
+        improves code maintainability. The code in a module should have a single purpose, and group together
+        functions with distinct functionality. For example, you might keep any functions used for Ajax in their
         own module. This could then be used in any projects where Ajax was required. </p>
       <li>
         <h3>Constructor Functions</h3>
-        <p>By convention, the names of constructor functions or class declarations are capitalized, which is the 
+        <p>By convention, the names of constructor functions or class declarations are capitalized, which is the
           convention used for classes in class-based programming languages.</p>
 
       </li>
       <li>
         <h3>Static Methods</h3>
-        <p>The static keyword can be used in class declarations to create a static method. These are sometimes called 
-          class methods in other programming languages. A static method is called by the class directly rather than 
+        <p>The static keyword can be used in class declarations to create a static method. These are sometimes called
+          class methods in other programming languages. A static method is called by the class directly rather than
           by instances of the class.</p>
-          <code>
+        <code>
             class Dice {
               constructor(sides=6) {
                   this.sides = sides;
@@ -94,14 +103,21 @@
     <p>Click on github icon to see code.</p>
     <div class="exercises">
 
+      <div>
+        <a href="videoPlayer/index.html"><img class="screenshot" id="videoPlayer" src="../images/videoPlayer.PNG"
+            alt="Video player"></a>
+        <a href="https://github.com/browner86/webFrontend2/tree/main/week3/videoPlayer"><img class="linkImage"
+            src="../images/githubLink.jpeg" alt="see code on github"></a>
+        <p>Videoplayer exercise from WESBOS JavaScript 30 course.</p>
+      </div>
+      <div>
+        <a href="drumKit/drumKit.html"><img class="screenshot" id="drumKit" src="../images/drumKit.png"
+            alt="Drum Kit"></a>
+        <a href="https://github.com/browner86/webFrontend2/tree/main/week3/drumKit"><img class="linkImage"
+            src="../images/githubLink.jpeg" alt="see code on github"></a>
+        <p>Drum kit exercize from WESBOS JavaScript 30 course.</p>
+        <p>from last semester.</p>
+      </div>
 
-      <div >
-        <a href="drumKit/drumKit.html"><img class="screenshot" id="drumKit" src="../images/drumKit.png" alt="Drum Kit"></a>
-        <a href="https://github.com/browner86/webFrontend2/tree/main/week3/drumKit"><img class ="linkImage"src="../images/githubLink.jpeg" alt="see code on github"></a>
-      </div>
-      <div >
-        <a href="videoPlayer/index.html"><img class="screenshot" id="videoPlayer" src="../images/videoPlayer.PNG" alt="Video player"></a>
-        <a href="https://github.com/browner86/webFrontend2/tree/main/week3/videoPlayer"><img class ="linkImage"src="../images/githubLink.jpeg" alt="see code on github"></a>
-      </div>
-      
-      </div>
+
+    </div>

@@ -1,0 +1,32 @@
+@import "task-list.css";
+@import "task-footer.css";
+@import "add-task.css";
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+
+:root {
+    --primary: #0a2342;
+    --secondary: #2ca58d;
+    --third-color: #84bc9c;
+    --fourth-color:#fffdf7;
+    
+    --fifth-color:#de6449;
+}
+
+body {
+    font-family: 'Nunito Sans', sans-serif;
+    background-color: var(--primary);
+    color: var(--fourth-color);
+}
+
+
+button {
+    background-color:var(--primary);
+    color: var(--fourth-color);
+    border-width: medium;
+    border-color: var(--fifth-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--fourth-color);
+}

@@ -22,11 +22,31 @@ body {
 button {
     background-color:var(--primary);
     color: var(--fourth-color);
-    border-width: medium;
-    border-color: var(--fifth-color);
+    border: none;
+    
+    /* border-width: medium; */
+    /* border-color: #de6449; */
+}
+#add-btn{
+    font-size: x-large;
+    text-align: center;
 }
 
 a {
     text-decoration: none;
     color: var(--fourth-color);
+}
+input[type=checkbox]:checked + .labelForCheck{
+    text-decoration: line-through;
+  }
+
+li{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+}
+.form-control{
+    display: flex;
+    justify-content: center;
+    align-content: stretch;
 }

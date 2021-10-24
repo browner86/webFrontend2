@@ -38,3 +38,6 @@
 ul li input checked {
     text-decoration: line-through;
 }
+#completed-button {
+    border-color:#de6449 ;
+}

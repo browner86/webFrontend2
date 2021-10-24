@@ -19,9 +19,9 @@ function addListItemHTML(task) {
     const taskListItem = document.createElement("li");
     taskListItem.innerHTML = `<input type="checkbox" id="status" ${task.completed === true ? "checked" : ""
         } onclick="updateTask(${task.id})"/>
-      <label class="label-for-check" for="idinput">${task.content
+      <label class="labelForCheck" for="idinput">${task.content
         }</label> <button class="delete-btn" onclick="removeTask(${task.id
-        })">x</button>`
+        })">X</button>`
     list.appendChild(taskListItem)
 }
 
@@ -29,6 +29,10 @@ function init() {
     list.innerHTML = "";
     tasks.forEach(addListItemHTML);
     countTasksLeft()
+    crossoutCompleted()
+    document.getElementById("completed-btn").style.border = '0';
+    document.getElementById("active-btn").style.border = '0';
+    document.getElementById("all-btn").style.border = 'medium solid #de6449';
 }
 function localStorageSave() {
     localStorage.setItem("tasks", JSON.stringify(tasks));
@@ -41,6 +45,13 @@ function showActive() {
     list.innerText = "";
     filteredTasks = tasks.filter((task) => task.completed === false);
     filteredTasks.forEach(addListItemHTML);
+   
+    document.getElementById("active-btn").style.border = 'medium solid #de6449';
+    document.getElementById("completed-btn").style.border = '0';
+    document.getElementById("all-btn").style.border = '0';
+
+
+  
 }
 
 function showAll() {
@@ -50,7 +61,15 @@ function showAll() {
 function showCompleted() {
     list.innerText = "";
     filteredTasks = tasks.filter((task) => task.completed === true);
-    filteredTasks.forEach();
+    filteredTasks.forEach(addListItemHTML);
+    // document.getElementById("all-btn").style.borderColor = 'transparent';
+    // document.getElementById("active-btn").style.borderColor = 'transparent';
+    document.getElementById("completed-btn").style.border = 'medium solid #de6449';
+    document.getElementById("active-btn").style.border = '0';
+    document.getElementById("all-btn").style.border = '0';
+   
+
+
 
 }
 
@@ -58,6 +77,7 @@ function updateTask(id) {
     const tasksIndex = tasks.map((transaction) => transaction.id);
     const index = tasksIndex.indexOf(id);
     tasks[index].completed = !tasks[index].completed;
+   
     localStorageSave();
     init();
 }
@@ -84,10 +104,17 @@ function addTask(event) {
     countTasksLeft();
 }
 function countTasksLeft() {
-    document.getElementById("tasks-left").innerText = tasks.filter((task) => task.completed === false).length;
+    document.getElementById("tasks-left").innerText = `${tasks.filter((task) => task.completed === false).length} Tasks Left` ;
 
 }
 function crossoutCompleted(){
-    
+   
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+   checkboxes.forEach(element => {
+       element.style.textDecoration = 'line-through';
+       
+   });
 }
+
+
 init()

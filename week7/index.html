@@ -12,8 +12,84 @@
 
     <h2>Notes</h2>
     <ul>
-      <li><p>I just worked on the todo app.</p></li>
+      <li>
+        <h3>Function Properties and Methods</h3>
+        <p>The fact that functions are first-class 
+          objects means they can have properties and methods themselves. For example, 
+          all functions have a length property that returns the number of parameters the function has.</p>
       
+      </li>
+      <li>
+        <p>functions can define and rewrite themselves</p>
+        <code>
+          function party(){
+            console.log('Wow this is amazing!');
+            party = function(){
+                console.log('Been there, got the T-Shirt');
+            }
+        }
+        </code>
+      </li>
+      <li>
+        <h3>recursive functions</h3>
+        <p>A recursive function is one that invokes itself until a certain condition is met. 
+          It’s a useful tool to use when iterative processes are involved. A common example
+          is a function that calculates the factorial of a number:</p>
+          <code>
+            function factorial(n) {
+              if (n === 0) {
+                  return 1;
+              } else {
+                  return n * factorial(n - 1);
+              }
+          }
+          </code>
+      </li>
+      <li>
+        <h3>Ajax</h3>
+        <h4>Fetch API</h4>
+        <p>The Fetch API provides a global fetch() method that only has one mandatory argument, 
+          which is the URL of the resource you wish to fetch. A very basic example would look 
+          something like the following piece of code:</p>
+          <code>
+            fetch('https://example.com/data')
+            .then( // code that handles the response )
+            .catch( // code that runs if the server returns an error )
+          </code>
+          
+      </li>
+      <li>
+        <h4>fetch json</h4>
+        <code>
+          fetch(url)
+          .then( response => response.json() ); // transforms the JSON data into a JavaScript object
+          .then( data => console.log(Object.entries(data)) )
+          .catch( error => console.log('There was an error: ', error))
+        </code>
+      </li>
+      <li>
+        <h4>
+          putting it all together
+        </h4>
+        <code>
+          const url = 'https:example.com/data';
+const headers = new Headers({ 'Content-Type': 'text/plain', 'Accept-Charset' : 'utf-8', 'Accept-Encoding':'gzip,deflate' })
+
+const request = (url,{
+    headers: headers
+      })
+
+      fetch(request)
+      .then( function(response) {
+          if(response.ok) {
+              return response;
+          }
+          throw Error(response.statusText);
+      })
+      .then( response => // do something with response )
+      .catch( error => console.log('There was an error!') )
+        </code>
+      </li>
     </ul>
     <h2>Links to exercises.</h2>
     <p>Click on github icon to see code.</p>

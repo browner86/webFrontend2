@@ -12,31 +12,68 @@
 
     <h2>Notes</h2>
     <ul>
-      <li><p>note 1.</p></li>
-      <li><p>note 2</p></li>
-      <li><p>note 3</p></li>
+      <li>
+        <h3>Transform</h3>
+        <p>The translate(x,y) function moves an element x from the left, and y from the top:</p>
+        <code>transform: translate(45px, -45px);</code>
+        <h4>Choose ordering carefully</h4>
+        <p>The order of transform functions does matter: if you rotate before translating, your translate 
+          direction will be on the rotated axis. The rightmost square in Figure 8.8 was translated then 
+          rotated with transform: translateX(200px) rotate(135deg);. The leftmost square was rotated 
+          first then translated along the newly rotated axis: transform: rotate(135deg) translateX(200px);.</p>
+      </li>
+      <li>
+        <h3>Canvas</h3>
+        <h4>Why not set width and height using CSS?</h4>
+        <p>You may be asking yourself, why not set the width and height via CSS? It’s because the width and height 
+          attributes determine how large the canvas’s coordinate system is. If we don’t specify width and height, 
+          the canvas element will default to a width of 300 and a height of 150. If we set the width and height 
+          for a canvas only in CSS, the canvas element will be 300 by 150, and the CSS properties will simply 
+          determine how large the box is that displays the image.</p>
+
+      </li>
+      <li>
+        <h3>Project to do</h3>
+        <ul>
+          <li>create landing page</li>
+          <li>create auth forms</li>
+          <li>create reading view</li>
+          <li>create journal view</li>
+          <li>create video view</li>
+          <li>use firebase auth</li>
+          <li>set up user collection in firestore</li>
+          <li>set up journal collection in firestore</li>
+          <li>make dummy pages for reading view</li>
+          <li>apply turn.js api to pages</li>
+          <li>link dummy video</li>
+          <li>make journal functional</li>
+          <li>show previous posts in scrolling cards</li>
+
+        </ul>
+      </li>
     </ul>
-    <h2>Links to exercises.</h2>
-    <p>Click on github icon to see code.</p>
+    <h2>Links to help with Project.</h2>
+    <!-- <p>Click on github icon to see code.</p> -->
     <div class="exercises">
 
 
       <div >
         <!-- <a href="rainbow/rainbow.html">Rainbow</a> -->
-        <a href="rainbow/rainbow.html"><img class="screenshot" id="rainbow" src="../images/rainbow.png" alt="Rainbow Exercise"></a>
+        <a href="http://www.turnjs.com/"><img class="screenshot"  src="../images/turnJS.PNG" alt="turnJS"></a>
         <!-- <label for="rainbow">Rainbow</label> -->
-        <a href="https://github.com/browner86/webFrontend2/tree/main/week1/rainbow"><img class ="linkImage"src="../images/githubLink.jpeg" alt="see code on github"></a>
-      </div>
-      <div >
-        <!-- <a href="quiz/index.html">Quiz</a>
-        <a href="rainbow/rainbow.html"><img class="screenshot" id="rainbow" src="../images/quizNinja.png" alt="Rainbow Exercise"></a> -->
+        <!-- <a href="https://github.com/browner86/webFrontend2/tree/main/week1/rainbow"><img class ="linkImage"src="../images/githubLink.jpeg" alt="see code on github"></a> -->
+        <p>Turn.js is an API that animates page turns </p>
+        <p>making pages look like real books</p>
 
-        <a href="quiz/index.html"><img class = "screenshot" src="../images/quizNinja.png" alt="rainbow screenshot"></a>
-        <a href="https://github.com/browner86/webFrontend2/tree/main/week1/quiz"><img class ="linkImage" src="../images/githubLink.jpeg" alt="see code on github"></a>
       </div>
       <div >
-        <a href="novice2Ninja/DOM/heros.html"><img class = "screenshot" src="../images/Heroes.png" alt="Heroes screenshot"></a>
-        <a href="https://github.com/browner86/webFrontend2/blob/main/week1/novice2Ninja/DOM/heros.html"><img class ="linkImage" src="../images/githubLink.jpeg" alt="see code on github"></a>
+        <!-- <a href="rainbow/rainbow.html">Rainbow</a> -->
+        <a href="https://firebase.google.com/docs?authuser=0"><img class="screenshot"  src="../images/firebase.PNG" alt="firebase"></a>
+        <!-- <label for="rainbow">Rainbow</label> -->
+        <!-- <a href="https://github.com/browner86/webFrontend2/tree/main/week1/rainbow"><img class ="linkImage"src="../images/githubLink.jpeg" alt="see code on github"></a> -->
+        <p>firebase is a way to have a nosql database serverless </p>
+        
       </div>
+    
       </div>
       </div>

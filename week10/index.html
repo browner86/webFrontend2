@@ -15,93 +15,147 @@
     <h2>Notes</h2>
     <ul>
       <li>
-        <h3>Window Object</h3>
-        <h4>Browser Object Model</h4>
+        <h3>Validating Forms</h3>
+        <h4>API</h4>
         <p>The Browser Object Model (or BOM for short) is a collection of properties and methods that contain
           information about the browser and computer screen. For example, we can find out which browser is being
           used to view a page (though, this method is unreliable). We can also find out the dimensions of the
           screen it is viewed on, and which pages have been visited before the current page. It can also be
           used for the rather dubious practice of creating pop-up windows, if you’re into annoying your users.</p>
-        <h4>Dialogs</h4>
-        <p>The window.alert() method will pause the execution of the program and display a message in a dialog
-          box. The message is provided as an argument to the method, and undefined is always returned:</p>
-        <p>The window.confirm() method will stop the execution of the program and display a confirmation
-          dialog that shows the message provided as an argument, and giving the options of OK or Cancel.
-          It returns the boolean values of true if the user clicks OK, and false if the user clicks Cancel:</p>
-        <p>The window.prompt() method will stop the execution of the program. It displays a dialog that shows
-          a message provided as an argument, as well as an input field that allows the user to enter text.
-          This text is then returned as a string when the user clicks OK. If the user clicks Cancel, null
-          is returned:</p>
 
-        <code>window.alert('Hello');</code>
-        <code>window.confirm('Do you wish to continue?');</code>
-        <code>window.prompt('Please enter your name:');</code>
-        <h4>location</h4>
-        <p>The window.location property is an object that contains information about the URL of the current page. It
-          contains a number of properties that provide information about different fragments of the URL.
-          The href property returns the full URL as a string:</p>
-        <code>window.location.href 
-                << "https://www.sitepoint.com/premium/books/javascript-novice-to-ninja"</code>
-
-        <p>The window.location object also has the following methods:
-          The reload() method can be used to force a reload of the current page. If it’s given a parameter of true, 
-          it will force the browser to reload the page from the server, instead of using a cached page.
-          The assign() method can be used to load another resource from a URL provided as a parameter, for example:</p>
       </li>
       <li>
-        <h3>html5 APIs</h3>
-        <h4>Websockets</h4>
-        <p>Websocket is a new protocol that allows two-way communication with a server – also known as push messaging. 
-          This means that a connection is kept open and responses are ‘pushed’ to the client as soon as they are received.</p>
-        <h4>Notifications</h4>
-        <p>The Notification API allows you to show messages using the system's notifications. This is usually a popup 
-          in the corner of the screen, but it changes depending on the operating system. An advantage of using the 
-          system notification is that they will still be displayed even if the web page that calls them isn't the 
-          current tab.</p>
-          <code>if(window.Notification) {
-            Notification.requestPermission();
-        }</code>
+        <h3>Using Fetch</h3>
+        <h4>Supplying Request Options</h4>
+        <p>The fetch() method can optionally accept a second parameter, an init object that allows you to control a
+          number of different settings:</p>
         <code>
-          if(window.Notification) {
-            Notification.requestPermission()
-            .then((permission) => {
-                if(Notification.permission === 'granted') {
-                new Notification('Hello JavaScript!');
-                }
-            });
-        }
-        notification.close();
+          // Example POST method implementation:
+            async function postData(url = '', data = {}) {
+              // Default options are marked with *
+              const response = await fetch(url, {
+                method: 'POST', // *GET, POST, PUT, DELETE, etc.
+                mode: 'cors', // no-cors, *cors, same-origin
+                cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+                credentials: 'same-origin', // include, *same-origin, omit
+                headers: {
+                  'Content-Type': 'application/json'
+                  // 'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                redirect: 'follow', // manual, *follow, error
+                referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+                body: JSON.stringify(data) // body data type must match "Content-Type" header
+              });
+              return response.json(); // parses JSON response into native JavaScript objects
+            }
+
+            postData('https://example.com/answer', { answer: 42 })
+              .then(data => {
+                console.log(data); // JSON data parsed by `data.json()` call
+              });
         </code>
-        <code>
-          const notification = new Notification('JavaScript: Novice to Ninja',{
-            body: 'The new book from SitePoint',
-            icon: 'sitepointlogo.png'
-        });
-        </code>
-        <h4>Multimedia</h4>
-        <p>A video clip can be inserted with the <video> tag, using the src attribute to point to the movie file:</p>
-          <code><video src='http://movie.mp4' controls>
-            Your browser does not support the video element.
-        </video></code>
+
       </li>
       <li>
         <h3>Project to do</h3>
-        <ul>
-          <li>create landing page</li>
-          <li>create auth forms</li>
-          <li>create reading view</li>
-          <li>create journal view</li>
-          <li>create video view</li>
-          <li>use firebase auth</li>
-          <li>set up user collection in firestore</li>
-          <li>set up journal collection in firestore</li>
-          <li>make dummy pages for reading view</li>
-          <li>apply turn.js api to pages</li>
-          <li>link dummy video</li>
-          <li>make journal functional</li>
-          <li>show previous posts in scrolling cards</li>
-
-        </ul>
+        <table><tr>
+          <th>Feature</th>
+          <th>Planned Week</th>
+          <Th>Completed</Th>
+        </tr>
+        <tr class="completed">
+          <td>
+            Build views
+          </td>
+          <td>Week 10</td>
+          <td> Yes </td>
+        </tr>
+        <tr class="completed">
+        <td>
+          Style views
+        </td>
+        <td>Week 10</td>
+        <td> Yes </td>
+      </tr>
+        <tr>
+          <td>
+            Setup  Firebase Auth
+          </td>
+          <td>Week 10</td>
+          <td> No </td>
+        </tr>
+        <tr>
+          <td>
+            Setup  Firebase Auth
+          </td>
+          <td>Week 11</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>
+            Setup Firestore Database
+          </td>
+          <td>Week 11</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>
+            Make Journal App Functional
+          </td>
+          <td>Week 11</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>
+            add lorem ipsem to Read
+          </td>
+          <td>Week 12</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>
+            Classify Divs
+          </td>
+          <td>Week 12</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>
+            Connect Turn.js
+          </td>
+          <td>Week 12</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>
+            Add Dummy video to watch
+          </td>
+          <td>Week 12</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>
+            Test & Debug
+          </td>
+          <td>Week 13</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>
+            Clean up styling
+          </td>
+          <td>Week 13</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>
+            Attempt stretch goals
+          </td>
+          <td>Week 13</td>
+          <td></td>
+        </tr>
+        </table>
+        
       </li>
     </ul>
     <h2>Links to help with Project.</h2>

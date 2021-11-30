@@ -19,6 +19,8 @@ const links = [
   ,{ label: "Week11 notes", url: "week11/index.html"}
   ,{ label: "Week12 notes", url: "week12/index.html"}
   ,{ label: "Week13 notes", url: "week13/index.html"}
+  ,{ label: "Project", url: "thereapy/home.html"}
+
 ];
 
 // declare variable and begin ordered list

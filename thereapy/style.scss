@@ -1,0 +1,147 @@
+$green: #224911;
+$yellow:#EACD3E;
+$orange:#E9724C;
+$gray: #6F686Dcc;
+$blue: #1C3144;
+
+@mixin background-img {
+    content: "";
+    position: absolute;
+    background-size: cover;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    opacity: .6; 
+    background-position: center;
+}
+
+// *{
+//     margin: 0;
+//     padding: 0;
+// }
+.body{
+    height: 100;
+}
+.navbar-brand{
+    img{
+        border-radius: 50%;
+        height: 50px;
+        width: 50px;
+    }
+}
+.navbar-toggler{
+    background-color: $yellow;
+}
+.bottom-nav{
+    a{
+         color:white
+    }
+   
+}
+.landing{
+    display: grid;
+    grid-template-rows: 60vh 1fr 1fr;
+    .img{
+        min-height: 100%;
+        object-fit: cover;
+    }
+    h1{
+        grid-row: 2/3;
+        place-self: center;
+    }
+    p{
+        place-self: center;
+    }
+    .btn{
+        width: 70wv;
+    }
+
+}
+.home:before{  
+    background-image: url('images/joel-mott-LaK153ghdig-unsplashCrop.jpg');
+    @include background-img;
+}
+.login:before{
+    @include background-img;
+    background-image: url('images/sincerely-media-2DdCDqJCS3c-unsplashCrop.jpg');
+}
+.read:before{  
+    background-image: url('images/taylor-wilcox-wx0Oyo-T_wU-unsplash.jpg');
+    @include background-img;
+}
+.journal:before{
+    @include background-img;
+    background-image: url('images/drew-colins-LIEQsu5JuoM-unsplash.jpg');
+}
+.meditate:before{
+    @include background-img;
+    background-image: url('images/mohammad-alizade-zWebdPq8GnU-unsplash.jpg');
+}
+.signup:before{
+    @include background-img;
+    background-image: url('images/danie-franco-CeZypKDceQc-unsplash.jpg');
+}
+
+.auth{
+    display: grid;
+    grid-template-rows: 1fr 1fr ;
+    form{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        grid-row: 2/3;
+        align-self: end;
+    }
+
+}
+.btn{
+    background-color:$green;
+    color: white;
+    margin: 1rem;
+    border-radius: 10px;
+
+    
+}
+.bottom-nav{
+
+
+.navbar{
+    background-color: $green;
+    border-radius: 2rem 2rem 0 0;
+}
+}
+img{
+    width: 100vw;
+}
+form{
+   input[type=text],textarea{
+    background-color: $gray;
+    color: white;
+}
+input[type=password]{
+    background-color: $gray;
+    color: white;
+}
+input[type=email]{
+    background-color: $gray;
+    color: white;
+}
+}
+input[type=text],textarea{
+    background-color: $gray;
+    color: white;
+}
+input[type=password]{
+    background-color: $gray;
+    color: white;
+}
+input[type=email]{
+    background-color: $gray;
+    color: white;
+}
+textarea{
+    background-color: $gray;
+    color: white;
+}

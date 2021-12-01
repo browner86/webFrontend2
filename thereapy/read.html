@@ -15,71 +15,90 @@
     </style>
 </head>
 
-<body class="journal">
+<body class="read">
 
     
         <!--Navbar-->
-        <header class="navbar navbar-light navbar-1 white">
-
-            <!-- Navbar brand -->
-            <a class="navbar-brand" href="#"><img src="images/jake-nackos-IF9TK5Uy-KI-unsplash small.jpg" alt="avatar"></a>
-
-            <!-- Collapse button -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent15"
-                aria-controls="navbarSupportedContent15" aria-expanded="false" aria-label="Toggle navigation"><span
-                    class="navbar-toggler-icon"></span></button>
-
-            <!-- Collapsible content -->
-            <div class="collapse navbar-collapse" id="navbarSupportedContent15">
-
-                <!-- Links -->
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
-                    </li>
+        <nav class="navbar navbar-light navbar-1 white" aria-label="First navbar example">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="home.html"><img src="images/jake-nackos-IF9TK5Uy-KI-unsplash small.jpg" alt="avatar"></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+        
+              <div class="collapse navbar-collapse" id="navbarsExample01">
+                <ul class="navbar-nav me-auto mb-2">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="read.html">Read</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link " href="journal.html">Write</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link " href="meditate.html">Meditate</a>
+                  </li>
+               
                 </ul>
-                <!-- Links -->
-
+               
+              </div>
             </div>
-            <!-- Collapsible content -->
-
-        </header>
+          </nav>
         <!--/.Navbar-->
    
     <main>
-        <h1>January 11, 2022</h1>
-        <div class="page-content">
-            
-            <div class="form-group">
-                <label for="title">Title</label>
-                <input type="text" class="form-control" id="title" placeholder="Name">
+        <div class="wrapper">
+            <div class="aspect">
+              <div class="aspect-inner">
+                <div class="flipbook" id="flipbook">
+                    <div class="page"><img src="./images/dmitry-osipenko-v37kr3k_G3M-unsplash.jpg" draggable="false" alt="" /></div>
+                    <div class="page"><img src="./images/0001.jpg" draggable="false" alt="" /></div>
+                    <div class="page"><img src="./images/0002.jpg" draggable="false" alt="" /></div>
+                    <div class="page"><img src="./images/0003.jpg" draggable="false" alt="" /></div>
+                    <div class="page"><img src="./images/0004.jpg" draggable="false" alt="" /></div>
+                    <div class="page"><img src="./images/0005.jpg" draggable="false" alt="" /></div>
+                    <div class="page"><img src="./images/0006.jpg" draggable="false" alt="" /></div>
+                    
+                  </div>
               </div>
-              <div class="form-group">
-                <label for="entry">Journal Entry</label>
-                <textarea id="entry" rows="12"></textarea>
-              </div>
-        </div>
+            </div>
+          </div>
         <button class="btn">Lets Get started</button>
     </main>
 
     <div class="bottom-nav">
         <nav class="navbar fixed-bottom justify-content-center ">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-            <a class="nav-link" href="#">Read</a>
-            <a class="nav-link" href="#">Write</a>
-            <a class="nav-link" href="#">Meditate</a>
+            <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+            <a class="nav-link" href="read.html">Read</a>
+            <a class="nav-link" href="journal.html">Write</a>
+            <a class="nav-link" href="meditate.html">Meditate</a>
         </nav>
     </div>
 
 </body>
 
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="turn.min.js"></script>
+<script>
+    var flipbookEL = document.getElementById('flipbook');
+window.addEventListener('resize', function (e) {
+  flipbookEL.style.width = '';
+  flipbookEL.style.height = '';
+  $(flipbookEL).turn('size', flipbookEL.clientWidth, flipbookEL.clientHeight);
+});
+$(flipbookEL).turn({
+    autoCenter: true
+});
+// $("#flipbook").turn({
+// 		width: 400,
+// 		height: 300,
+// 		autoCenter: true
+// 	});
+</script>
 
 </html>

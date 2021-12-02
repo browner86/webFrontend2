@@ -1,0 +1,14 @@
+[
+    {
+        "ID": 1,
+        "post_date": " 12/1/2021",
+        "post_title": "pretty good day",
+        "post_content": "I had a great day. I found a nickel"
+    },
+    {
+        "ID": 2,
+        "post_date": "12/1/21",
+        "post_title": "bad day",
+        "post_content": "The nickel was fake."
+    }
+]

@@ -1,39 +1,41 @@
-// let postArray = localStorage.getItem('postArray');
-// postArray= postArray.split('},')
-// let obj = JSON.parse(postArray[0]);
-// console.log(postArray);
-// console.log(postArray[0]);
-// console.log(obj);
-// let date = ` <p> Date: ${obj.date} </p>`;
-// let title = ` <p> Title: ${obj.title} </p>`;
-// let entry = ` <p> Entry: ${obj.entry} </p>`;
-// let html = `
-// <h5 class="card-header"><img class="avatar-image" src="images/jake-nackos-IF9TK5Uy-KI-unsplash small.jpg" alt="avatar"> ${obj.title}</h5>
-// <div class="card-body">
-//   <h5 class="card-title">${obj.date}</h5>
-//   <p class="card-text">${obj.entry}</p>
-// </div>
-// `
+let markup;
 
+if (localStorage.getItem('postArray')) {
+  //get entry post array from local storage it is stored as a string.
+  let postArray = localStorage.getItem('postArray');
 
-// document.getElementById('journal-ent').innerHTML = html;
+  //convert local storage string into array of javascript objects.
+  let objectArray = JSON.parse(postArray);
 
-let postArray = localStorage.getItem('postArray');
-
-let obj = JSON.parse(postArray);
-console.log(postArray);
-console.log(postArray[0]);
-console.log(obj);
-let date = ` <p> Date: ${obj[0].date} </p>`;
-let title = ` <p> Title: ${obj[0].title} </p>`;
-let entry = ` <p> Entry: ${obj[0].entry} </p>`;
-let html = `
-<h5 class="card-header"><img class="avatar-image" src="images/jake-nackos-IF9TK5Uy-KI-unsplash small.jpg" alt="avatar"> ${obj[0].title}</h5>
+  //loop through the objects to build html for each post.
+   markup = `
+${objectArray.map(journalEntry => `
+<div class="card border-light transparent">
+<h5 class="card-header"> ${journalEntry.title}</h5>
 <div class="card-body">
-  <h5 class="card-title">${obj[0].date}</h5>
-  <p class="card-text">${obj[0].entry}</p>
+<h5 class="card-title">${journalEntry.date}</h5>
+<p class="card-text">${journalEntry.entry}</p>
+</div>
+</div>
+`).join('')}
+<button type="button" onclick="clearLocalStorage()" class="btn">Clear journal entries</button>`;
+}else{
+  markup = `
+  <div class="card border-light transparent">
+<div class="card-body">
+<h5 class="card-title">Welcome to Always THEREapy</h5>
+<p class="card-text">This page will show your Journal entries. 
+Click the "Go to Journal" button to write your first journal entry.</p>
+<p class="card-text">Tap the "Read" button to sample the first five pages of "Putting up with Susan". </p>
+<p>Head over to "Meditate" to view a meditation video.</p>
+</div>
 </div>
 `
+}
+
+//=========================================================================
 
 
-document.getElementById('journal-ent').innerHTML = html;
+
+
+document.getElementById('journal-ent').innerHTML = markup;

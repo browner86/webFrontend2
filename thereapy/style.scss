@@ -3,6 +3,7 @@ $yellow:#EACD3E;
 $orange:#E9724C;
 $gray: #6F686Dcc;
 $blue: #1C3144;
+$transparent: #FFF8F0cc;
 
 @mixin background-img {
     content: "";
@@ -117,8 +118,8 @@ img{
 }
 form{
    input[type=text],textarea{
-    background-color: $gray;
-    color: white;
+    background-color: $transparent;
+    color: black;
 }
 input[type=password]{
     background-color: $gray;
@@ -194,4 +195,11 @@ video source { width: 100%; height: auto; }
       height: 50px;
       width: 50px;
     //   border-radius: 50%;
+  }
+  .transparent{
+background-color: $transparent;
+  }
+  .journal-entries{
+      height: 70vh;
+      overflow: scroll;
   }

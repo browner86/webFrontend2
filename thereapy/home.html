@@ -30,7 +30,7 @@
               
                  
               </div>
-        <div id="journal-ent">
+       
               <div class="collapse navbar-collapse" id="navbarsExample01">
                 <ul class="navbar-nav me-auto mb-2">
                   <li class="nav-item">
@@ -49,10 +49,10 @@
                 </ul>
                
               </div>
-            </div>
+            
           </nav>
         <!--/.Navbar-->
-   
+        <div class="card" id="journal-ent"></div>
     <button class="btn">Lets Get started</button>
 
     <div class="bottom-nav">
@@ -68,9 +68,10 @@
 </body>
 
 <!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
-    <script>
+    <!-- <script>
       
           let postArray = localStorage.getItem('postArray');
           postArray= postArray.split('},')
@@ -81,10 +82,20 @@
           let date = ` <p> Date: ${obj.date} </p>`;
           let title = ` <p> Title: ${obj.title} </p>`;
           let entry = ` <p> Entry: ${obj.entry} </p>`;
-          document.getElementById('journal-ent').innerHTML = date + title + entry;
+          let html = `
+          <h5 class="card-header">${obj.title}</h5>
+          <div class="card-body">
+            <h5 class="card-title">${obj.date}</h5>
+            <p class="card-text">${obj.entry}</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+          `
+
+
+          document.getElementById('journal-ent').innerHTML = html;
         
-            </script>
+            </script> -->
 
-
+<script src="getJournalEntries.js"></script>
 
 </html>

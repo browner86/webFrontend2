@@ -18,7 +18,7 @@ ${objectArray.map(journalEntry => `
 </div>
 </div>
 `).join('')}
-<button type="button" onclick="clearLocalStorage()" class="btn">Clear journal entries</button>`;
+<button type="button" onclick="clearLocalStorage()" class="btn">Clear Journal Entries</button>`;
 }else{
   markup = `
   <div class="card border-light transparent">

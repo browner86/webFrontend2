@@ -24,7 +24,7 @@ const links = [
 ];
 
 // declare variable and begin ordered list
-var linksHtml = "<ol>";
+var linksHtml = "<ul>";
 
 
 //loop through links array
@@ -35,11 +35,11 @@ for (var i = 0; i < links.length; i++) {
     var url   = links[i]['url']  ;
     // create list Item for each item in links array
     // create anchor tag with label and url
-    linksHtml += `<li><a href="${url}">${label}</a></li>`;
+    linksHtml += `<li><a class="btn btn-dark"  href="${url}">${label}</a></li><br>`;
     }
 
 //close ordered list
-linksHtml += "</ol>";
+linksHtml += "</ul>";
 
 // insert html into the linksHtml div in index
 document.getElementById('linksHtml').innerHTML = linksHtml;

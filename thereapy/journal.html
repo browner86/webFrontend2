@@ -55,20 +55,27 @@
   <!--/.Navbar-->
 
   <main>
+    <div class="align-items-end"> 
+     
+    </div>
     <div id="journal-date"></div>
     <h1 id="journalDate"></h1>
     <div class="page-content">
       <form action="home.html">
-        <div class="form-group">
+        <button type="submit" onclick="sendToLocalStorage()" class="btn journal-submit ">Post to Journal</button>
+
+        <div class="form-group"> 
+          
+
           <label for="title">Title</label>
-          <input type="text" class="form-control transparent" id="title" placeholder="Name">
+          <input type="text" class="form-control transparent" id="title" placeholder="Title">
         </div>
         <div class="form-group">
           <label for="entry">Journal Entry</label>
           <textarea class="form-control transparent" id="entry" rows="12"></textarea>
         </div>
     </div>
-    <button type="submit" onclick="sendToLocalStorage()" class="btn">Post to Journal</button>
+    
 
     </form>
 
